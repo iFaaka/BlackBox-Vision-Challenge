@@ -3,7 +3,7 @@ import { Card } from "./Card";
 import { getData } from "./getData";
 import "./stylesheets/QuestionGame.css";
 var he = require("he");
-export const QuestionGame = () => {
+export const QuestionGame = ({ setLightMode }) => {
   const [data, setData] = useState([]);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [score, setScore] = useState(0);
@@ -69,6 +69,16 @@ export const QuestionGame = () => {
       </div>
 
       {fragment}
+
+      <p className="change-light">
+        ¿Mucha luz? Proba el{" "}
+        <span
+          onClick={() => setLightMode((prevS) => !prevS)}
+          className="button-dark"
+        >
+          modo oscuro
+        </span>
+      </p>
     </div>
   );
 };

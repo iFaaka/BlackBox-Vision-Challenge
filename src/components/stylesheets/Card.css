@@ -3,9 +3,8 @@ button {
     color: white;
     border: none;
     border-radius: 25px;
-    padding: 2rem 2rem;
-    margin: 2rem 1rem;
-    text-align: center;
+    padding: 2vw 2vw;
+    margin: 2vw 1vw;
     font-weight: 500;
     font-size: 1.2rem;
     cursor: pointer;
@@ -36,7 +35,6 @@ p {
 
 .button-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -44,19 +42,29 @@ p {
     background-color: lime !important;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 806px) {
+    button {
+
+        margin: .5vw;
+
+    }
+}
+
+@media (max-width: 425px) {
 
     button {
         align-self: center;
         justify-self: center;
-        width: 50%;
-
+        font-size: 1.1rem;
+        width: 50vw;
+        margin: 5vw;
+        word-wrap: break-word;
     }
 
     .button-container {
-
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .card-container {
