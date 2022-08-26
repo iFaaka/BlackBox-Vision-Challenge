@@ -3,7 +3,7 @@ import { Card } from "./Card";
 import { getData } from "./getData";
 import "./stylesheets/QuestionGame.css";
 var he = require("he");
-export const QuestionGame = ({ setLightMode }) => {
+export const QuestionGame = ({ setLightMode, lightMode }) => {
   const [data, setData] = useState([]);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [score, setScore] = useState(0);
@@ -61,10 +61,16 @@ export const QuestionGame = ({ setLightMode }) => {
   return (
     <div className="question-game-container">
       <div className="title-container">
-        <h1>QuestionGame</h1>
+        <h1 className={`${lightMode === false ? "" : "dark"}`}>QuestionGame</h1>
         <div className="subtitle-container">
           <h2>Powered by:</h2>
-          <img src="https://res.cloudinary.com/blackboxvision/image/upload/f_auto,c_limit,w_256,q_auto/v1624760386/website/logos/logo-transparent_vzcuce.png"></img>
+          <img
+            src={`${
+              lightMode === false
+                ? "https://res.cloudinary.com/blackboxvision/image/upload/f_auto,c_limit,w_256,q_auto/v1624760386/website/logos/logo-transparent_vzcuce.png"
+                : "https://i.ibb.co/BNpnM0m/logo-transparent-vzcuce.png"
+            }`}
+          ></img>
         </div>
       </div>
 
